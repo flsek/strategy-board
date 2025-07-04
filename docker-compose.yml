@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: strategy-board-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - strategy-board-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: strategy-board-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - strategy-board-network
+
+networks:
+  strategy-board-network:
+    driver: bridge
