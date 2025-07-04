@@ -19,7 +19,6 @@
 
 ### 인프라
 - **Docker & Docker Compose**
-- **Nginx** (프론트엔드 서빙)
 
 ## 🎯 주요 기능
 
@@ -39,40 +38,52 @@
 
 ### Docker 실행 (추천)
 ```bash
-# 1. 저장소 클론
+# 저장소 클론
 git clone <repository-url>
 cd strategy-board
-
+```
 # 2. Docker 실행 (모든 서비스 자동 시작)
+```bash
 ./run.sh
+```
 
 # 3. 브라우저에서 접속
-# 프론트엔드: http://localhost:3000
-# 백엔드 API: http://localhost:8080/api
-# H2 콘솔: http://localhost:8080/h2-console
+## 프론트엔드: http://localhost:3000
+## 백엔드 API: http://localhost:8080/api
+## H2 콘솔: http://localhost:8080/h2-console
 
-개발 환경 실행
-
+# 개발 환경 실행
+```bash
+## Docker 환경
+./run.sh
+# 또는
+docker-compose up -d
+```
 
 # 백엔드 실행
+```bash
 cd backend
 ./mvnw spring-boot:run
-
+```
 
 # 프론트엔드 실행 (새 터미널)
+```bash
 cd frontend
 npm install
 npm start
+```
 
 # 🔧 시스템 종료
+```bash
 ## Docker 환경
 ./stop.sh
 # 또는
 docker-compose down
 
 # 개발 환경
-# Ctrl+C로 각 서버 종료
+## Ctrl+C로 각 서버 종료
 ```
+
 # 📋 API 엔드포인트
 게시글 조회
 
